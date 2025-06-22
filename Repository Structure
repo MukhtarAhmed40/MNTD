@@ -1,0 +1,29 @@
+MNTD-Malicious-Network-Traffic-Detection/
+│
+├── models/
+│   ├── mntd_model.py          # Core model implementation
+│   └── awdv_optimizer.py      # AWDV optimization implementation
+│
+├── training/
+│   ├── train.py               # Main training script
+│   └── train_utils.py         # Helper functions for training
+│
+├── data/
+│   ├── preprocess_cicids2017.ipynb      # CICIDS2017 preprocessing notebook
+│   ├── preprocess_cira_doh.ipynb        # CIRA-CIC-DoHBrw2020 preprocessing notebook
+│   └── sample_data_loader.py            # Dataset loader implementation
+│
+├── configs/
+│   └── default_config.yaml    # Configuration file for hyperparameters
+│
+├── tests/
+│   ├── test_model.py          # Unit tests for model components
+│   └── test_data_loading.py   # Tests for data preprocessing
+│
+├── results/                   # For storing training results and models
+│   ├── figures/               # Training plots and visualizations
+│   └── saved_models/          # Trained model checkpoints
+│
+├── requirements.txt           # Python dependencies
+├── LICENSE                    # MIT License recommended
+└── README.md                  # Project documentation
