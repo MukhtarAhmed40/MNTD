@@ -1,0 +1,14 @@
+# Datasets
+The model has been tested with:
+
+CICIDS2017
+CIRA-CIC-DoHBrw2020
+
+Preprocessing notebooks are provided in the data/ directory.
+
+# Results
+Our implementation achieves the following performance on test sets:
+
+Dataset	Accuracy	Precision	Recall	F1-Score
+CICIDS2017	98.52%	97.99%	98.43%	98.98%
+CIRA-CIC-DoHBrw	98.82%	98.79%	98.82%	98.66%
