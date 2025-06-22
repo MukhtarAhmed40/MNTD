@@ -42,33 +42,8 @@ To evaluate a trained model:
 
 python training/train.py --eval --model_path results/saved_models/best_model.h5
 
-# Datasets
-The model has been tested with:
-
-CICIDS2017
-CIRA-CIC-DoHBrw2020
-
-Preprocessing notebooks are provided in the data/ directory.
-
-# Results
-Our implementation achieves the following performance on test sets:
-
-Dataset	Accuracy	Precision	Recall	F1-Score
-CICIDS2017	98.52%	97.99%	98.43%	98.98%
-CIRA-CIC-DoHBrw	98.82%	98.79%	98.82%	98.66%
-
 # Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
-
-# Citation
-If you use this implementation in your research, please cite the original paper:
-
-@article{mntd2024,
-  title={MNTD: An Efficient Malicious Network Traffic Detection Framework based on Optimized Deep Learning},
-  author={Ahmed, Mukhtar and Chen, Jinfu and Akpaku, Ernest and Latif, Ajmal},
-  journal={Journal Name},
-  year={2024}
-}
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details.
