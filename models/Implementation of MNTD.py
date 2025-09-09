@@ -27,10 +27,10 @@ class MNTD:
         self.batch_size = 128
         self.num_epochs = 50
         self.num_filters = 32
-        self.kernel_size = 4
-        self.pool_size = 5
+        self.kernel_size = 3
+        self.pool_size = 2
         self.bilstm_units = 128
-        self.num_heads = 8
+        self.num_heads = 4
         self.head_size = 64
         self.dense_units = 64
         
