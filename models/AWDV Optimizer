@@ -51,9 +51,9 @@ class AWDVOptimizer:
                 'input_shape': self.model.input_shape,
                 'num_classes': self.model.num_classes,
                 'num_filters': int(2**np.random.randint(3, 6)),  # 8 to 32
-                'kernel_size': int(2**np.random.randint(2, 4)),   # 4 to 8
+                'kernel_size': int(2**np.random.randint(3, 4)),   # 4 to 8
                 'bilstm_units': int(2**np.random.randint(6, 8)),  # 64 to 128
-                'num_heads': int(2**np.random.randint(2, 4)),     # 4 to 8
+                'num_heads': int(2**np.random.randint(2, 4)),     # 2 to 8
                 'head_size': int(2**np.random.randint(5, 7)),     # 32 to 64
                 'dense_units': int(2**np.random.randint(5, 7)),   # 32 to 64
                 'dropout_rate': np.random.uniform(0.01, 0.2),
