@@ -74,7 +74,7 @@ class MNTDModel:
         x = layers.Conv1D(
             filters=self.num_filters,
             kernel_size=self.kernel_size,
-            activation='elu',
+            activation='relu',
             padding='same',
             kernel_regularizer=regularizers.l2(self.l2_reg)
         )(inputs)
@@ -99,7 +99,7 @@ class MNTDModel:
         x = layers.GlobalAveragePooling1D()(x)
         x = layers.Dense(
             self.dense_units,
-            activation='elu',
+            activation='relu',
             kernel_regularizer=regularizers.l2(self.l2_reg)
         )(x)
         x = layers.Dropout(self.dropout_rate)(x)
