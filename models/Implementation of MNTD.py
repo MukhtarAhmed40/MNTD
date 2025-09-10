@@ -41,7 +41,7 @@ class MNTD:
         
         # 1D CNN for spatial feature extraction
         x = layers.Conv1D(filters=self.num_filters, kernel_size=self.kernel_size, 
-                         activation='elu', padding='same')(inputs)
+                         activation='relu', padding='same')(inputs)
         x = layers.MaxPooling1D(pool_size=self.pool_size)(x)
         
         # BiLSTM for temporal dependencies
