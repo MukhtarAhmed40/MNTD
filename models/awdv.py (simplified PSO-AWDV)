@@ -1,0 +1,39 @@
+# src/awdv.py
+import numpy as np
+import random
+
+class Particle:
+    def __init__(self, bounds):
+        self.position = np.array([random.uniform(b[0], b[1]) for b in bounds])
+        self.velocity = np.zeros_like(self.position)
+        self.best_pos = self.position.copy()
+        self.best_score = float('inf')
+
+def awdv_optimize(eval_fn, bounds, particles=10, iterations=20, alpha=0.9, beta=0.5, gamma=0.1):
+    """
+    eval_fn: function(position_vector) -> validation_loss (lower better)
+    bounds: list of (low,high) for each hyperparam
+    returns best_position, best_score
+    """
+    swarm = [Particle(bounds) for _ in range(particles)]
+    gbest_pos = swarm[0].position.copy()
+    gbest_score = float('inf')
+    for it in range(iterations):
+        for p in swarm:
+            score = eval_fn(p.position)
+            if score < p.best_score:
+                p.best_score = score
+                p.best_pos = p.position.copy()
+            if score < gbest_score:
+                gbest_score = score
+                gbest_pos = p.position.copy()
+        for p in swarm:
+            # adaptive weighted delay velocity term Di(t) as small noise scaled by gamma
+            Di = gamma * np.random.randn(*p.position.shape)
+            # velocity update
+            p.velocity = alpha * p.velocity + beta * (p.best_pos - p.position) + beta * (gbest_pos - p.position) + Di
+            p.position = p.position + p.velocity
+            # clamp
+            for i, b in enumerate(bounds):
+                p.position[i] = max(min(p.position[i], b[1]), b[0])
+    return gbest_pos, gbest_score
