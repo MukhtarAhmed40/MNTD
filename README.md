@@ -8,11 +8,11 @@ This repository contains the implementation of "MNTD: An Efficient Malicious Net
 
 ## Features
 
-- CNN-BiLSTM with Multi-Head Attention architecture
-- Adaptive Weighted Delay Velocity (AWDV) optimization
-- Contrastive learning for improved feature discrimination
-- Support for CICIDS2017 and CIRA-CIC-DoHBrw2020 datasets
-- Comprehensive training and evaluation pipeline
+- Conv1D + BiLSTM(ELU) + MultiHeadAttention model (TensorFlow/Keras).
+- AWDV (PSO-like) hyperparameter optimization.
+- Contrastive learning with triplet sampling (pos_cos>=0.5, neg_cos<=0.3).
+- Preprocessing pipeline for CSV flow data (min-max scaling, one-hot).
+- Train/eval scripts and config file.
 
 ## Installation
 
